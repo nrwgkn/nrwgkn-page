@@ -2,6 +2,7 @@ $color-green: #79f2a4;
 $color-violet: #9f79f2;
 $color-pink: #f272ae;
 $color-blue: #8fafed;
+$color-yellow: #fff788;
 $color-black: #000;
 $color-white: #fff;
 
@@ -32,7 +33,7 @@ img {
   flex-direction: column;
   flex: 1;
   &__title {
-    padding: 32px;
+    padding: 32px 0 40px;
     border-bottom: 2px solid $color-black;
     font-size: 40px;
     position: relative;
@@ -44,13 +45,11 @@ img {
       position: absolute;
       bottom: 0;
       border-top: 2px solid $color-black;
-      background-color: $color-pink;
       left: 0;
     }
   }
   &__body {
     flex: 1;
-    background-color: $color-violet;
   }
   &__container {
     width: 80%;
@@ -60,7 +59,7 @@ img {
   }
 }
 
-.l-galleryList {
+.m-galleryList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
@@ -101,7 +100,7 @@ img {
   }
 }
 
-.l-galleryDetail {
+.m-galleryDetail {
   background-color: $color-white;
   border: 2px solid $color-black;
   &__title {
@@ -129,7 +128,7 @@ img {
   &__image {
     border-bottom: 2px solid $color-black;
   }
-  &__urls {
+  &__comment {
     dl {
       display: flex;
       dt,
@@ -139,9 +138,12 @@ img {
       dt {
         border-right: 2px solid $color-black;
         width: 200px;
+        flex-shrink: 0;
       }
       dd {
-        text-decoration: underline;
+        a {
+          text-decoration: underline;
+        }
       }
     }
     dl ~ dl {
@@ -172,6 +174,89 @@ img {
     }
     &__body {
       background-color: $color-pink;
+    }
+  }
+}
+
+.p-works {
+  .l-gallery {
+    &__title::after {
+      background-color: $color-pink;
+    }
+    &__body {
+      background-color: $color-violet;
+    }
+  }
+}
+
+.p-feature {
+  .l-gallery {
+    &__title::after {
+      background-color: $color-yellow;
+    }
+    &__body {
+      background-color: $color-blue;
+    }
+  }
+}
+
+.p-feature {
+  &Card {
+    background-color: $color-white;
+    border: 2px solid $color-black;
+    display: flex;
+    flex-wrap: wrap;
+    &__image,
+    &__data {
+      flex-basis: 50%;
+    }
+    &__image {
+      padding: 16px;
+      img {
+        border: 2px solid $color-black;
+      }
+    }
+    &__data {
+      border-left: 2px solid $color-black;
+      p {
+        padding: 8px;
+        text-align: center;
+        font-weight: 700;
+        background-color: $color-pink;
+        border-bottom: 2px solid $color-black;
+      }
+      dl {
+        display: flex;
+        border-bottom: 2px solid $color-black;
+        dt,
+        dd {
+          padding: 16px;
+        }
+        dt {
+          width: 20%;
+          min-width: 180px;
+          flex-shrink: 0;
+        }
+        dd {
+          border-left: 2px solid $color-black;
+          line-height: 1.4;
+        }
+      }
+    }
+    &__comment {
+      flex-basis: 100%;
+      border-top: 2px solid $color-black;
+      span {
+        padding: 16px;
+        display: inline-block;
+        background-color: $color-yellow;
+        border-right: 2px solid $color-black;
+        border-bottom: 2px solid $color-black;
+      }
+      p {
+        padding: 16px;
+        line-height: 1.4;
+      }
     }
   }
 }

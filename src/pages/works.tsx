@@ -7,9 +7,17 @@ import { IItem } from "../types/Item";
 const worksData = [
   {
     name: "株式会社キャンディル",
-    category: ["Responsive", "JavaScript", "jQuery", "Sass"],
+    category: [
+      "Responsive",
+      "JavaScript",
+      "jQuery",
+      "Sass",
+      "WordPress",
+      "Speed improvement",
+    ],
     url: "https://www.candeal.co.jp/",
     thumbnail: "../img/works/img_works_candeal.jpg",
+    text: "サイトの大幅改修に携わりました。既存ページの改修、新規で追加になったページの制作も対応しました。1ページあたりのメディア（主に画像）数が多いページが多く、読み込み速度が著しく下がることのないよう、PageSpeedInsight等活用し画像の最適化や遅延読み込みなど表示速度の部分も意識して制作を進めました。",
   },
   {
     name: "ネットカフェダイス",
@@ -25,7 +33,7 @@ const worksData = [
   },
   {
     name: "インプレックスアンドカンパニー株式会社　コーポレートサイト",
-    category: ["Responsive", "JavaScript"],
+    category: ["Responsive", "JavaScript", "Speed improvement"],
     url: "https://www.imprexc.jp/",
     thumbnail: "../img/works/img_works_imprexc.jpg",
   },
@@ -37,13 +45,13 @@ const worksData = [
   },
   {
     name: "リクリック コーポレートサイト",
-    category: ["Responsive", "JavaScript", "Sass"],
+    category: ["Responsive", "JavaScript", "Sass", "Speed improvement"],
     url: "https://www.reclick.co.jp/",
     thumbnail: "../img/works/img_works_reclick.png",
   },
   {
     name: "東京・錦糸町のメンバーズバー　CAMPO BAR",
-    category: ["JavaScript", "Sass"],
+    category: ["JavaScript", "Sass", "Speed improvement"],
     url: "http://campo-bar.com/",
     thumbnail: "../img/works/img_works_bar.jpg",
   },

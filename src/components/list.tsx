@@ -8,26 +8,26 @@ interface Props {
 
 const List: React.FC<Props> = ({ itemList, onClick }) => {
   return (
-    <ul className="l-galleryList">
+    <ul className="m-galleryList">
       {itemList.map((item, index) => {
         return (
           <li
-            className="l-galleryList__item"
+            className="m-galleryList__item"
             key={`practice_${index}`}
             onClick={() => onClick(index)}
           >
-            <div className="l-galleryList__image">
+            <div className="m-galleryList__image">
               <img src={item.thumbnail} alt={item.name} />
             </div>
-            <div className="l-galleryList__category">
+            <div className="m-galleryList__category">
               <ul>
                 {item.category.map((ctg, idx) => (
                   <li key={`ctg_${idx}`}>{ctg}</li>
                 ))}
               </ul>
             </div>
-            <div className="l-galleryList__title">
-              <p className="l-galleryList__name">{item.name}</p>
+            <div className="m-galleryList__title">
+              <p className="m-galleryList__name">{item.name}</p>
             </div>
           </li>
         );
