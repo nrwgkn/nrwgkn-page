@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { AppLayout } from "../components/layout";
-import { List } from "../components/list";
-import { Detail } from "../components/detail";
-import { IItem } from "../types/Item";
+import { AppLayout } from "@/components/layout";
+import { List } from "@/components/list";
+import { Detail } from "@/components/detail";
+import { IItem } from "@/types/Item";
 
 const worksData = [
   {

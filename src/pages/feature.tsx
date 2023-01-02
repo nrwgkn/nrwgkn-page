@@ -1,5 +1,5 @@
 import React from "react";
-import { AppLayout } from "../components/layout";
+import { AppLayout } from "@/components/layout";
 
 const Feature = () => {
   return (

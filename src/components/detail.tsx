@@ -1,5 +1,5 @@
 import React from "react";
-import { IItem } from "../types/Item";
+import { IItem } from "@/types/Item";
 
 interface Props {
   data: IItem;
