@@ -1,6 +1,6 @@
 import React from "react";
-import { AppLayout } from "@/components/Layout";
-import { Link } from "@/components/Link";
+import { AppLayout } from "../components/Layout";
+import { Link } from "../components/Link";
 
 const Feature = () => {
   return (

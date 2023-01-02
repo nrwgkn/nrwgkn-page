@@ -1,6 +1,6 @@
 import React from "react";
-import { IItem } from "@/types/Item";
-import { Link } from "@/components/Link";
+import { IItem } from "../types/Item";
+import { Link } from "../components/Link";
 
 interface Props {
   data: IItem;

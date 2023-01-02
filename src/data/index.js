@@ -132,6 +132,6 @@ export const practiceData = [
     name: "ポートフォリオサイト",
     category: ["React.js", "TypeScript", "Next.js", "Sass", "Netlify"],
     thumbnail: "../img/practice/img_next_portfolio.png",
-    text: "HTMLで作成していた自身のポートフォリオサイトをReactを使用して作成し直しました。",
+    text: "このサイトです。HTMLで作成していた自身のポートフォリオサイトをReactを使用して作成し直しました。",
   },
 ];
