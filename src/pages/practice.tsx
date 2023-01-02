@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { AppLayout } from "../components/layout";
 import { List } from "../components/list";
+import { Detail } from "../components/detail";
 
 const practiceData = [
   {
@@ -91,34 +92,7 @@ const Practice = () => {
         <div className="p-practice__body">
           <div className="p-practice__container">
             {showData ? (
-              <>
-                <div className="m-practiceDetail">
-                  <h2 className="m-practiceDetail__title">{showData.name}</h2>
-                  <ul className="m-practiceDetail__category">
-                    {showData.category.map((ctg, idx) => {
-                      return <li key={`ctg_${idx}`}>{ctg}</li>;
-                    })}
-                  </ul>
-                  <div className="m-practiceDetail__image">
-                    <img src={showData.thumbnail} alt={showData.name} />
-                  </div>
-                  <div className="m-practiceDetail__urls">
-                    <dl>
-                      <dt>ポートフォリオURL</dt>
-                      <dd>{showData.portforioUrl}</dd>
-                    </dl>
-                    {showData.url && (
-                      <dl>
-                        <dt>参照元URL</dt>
-                        <dd>{showData.url}</dd>
-                      </dl>
-                    )}
-                  </div>
-                  {showData.text && (
-                    <p className="m-practiceDetail__text">{showData.text}</p>
-                  )}
-                </div>
-              </>
+              <Detail data={showData} />
             ) : (
               <>
                 {practiceData.length > 0 && (

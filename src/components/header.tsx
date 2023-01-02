@@ -6,7 +6,7 @@ const Header = () => {
     <header className="m-header">
       <ul>
         <li>
-          <Link href="/">TOP</Link>
+          <Link href="/">HOME</Link>
         </li>
         <li>
           <Link href="/feature">FEATURE</Link>

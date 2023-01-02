@@ -27,12 +27,8 @@ const List: React.FC<Props> = ({ itemList, onClick }) => {
               </ul>
             </div>
             <div className="m-practiceList__title">
-              <p className="m-practiceList__name">
-                <a href={item.portforioUrl}>{item.name}</a>
-              </p>
-              {item.url && <p className="m-practiceList__url">{item.url}</p>}
+              <p className="m-practiceList__name">{item.name}</p>
             </div>
-            {item.text && <p>{item.text}</p>}
           </li>
         );
       })}
