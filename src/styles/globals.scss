@@ -1,15 +1,30 @@
 $color-green: #79f2a4;
 $color-violet: #9f79f2;
 
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  font-family: "Avenir", "Noto Sans JP", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
 .l-container {
-  min-height: 100vh;
+  // min-height: 100vh;
+  min-height: 100%;
   border: 2px solid #000;
   display: flex;
   flex-direction: column;
 }
 
 .m-header {
-  font-family: "Avenir";
+  // font-family: "Avenir";
   font-weight: 700;
   background-color: $color-green;
   ul {
@@ -28,17 +43,141 @@ $color-violet: #9f79f2;
   display: flex;
   align-items: center;
   justify-content: center;
-  &__title {
-    text-align: center;
-    font-family: "Avenir";
-    font-weight: 900;
-    // text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
-    // color: #9F79F2;
+}
+
+.m-title {
+  text-align: center;
+  // font-family: "Avenir";
+  font-weight: 900;
+  // text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+  // color: #9F79F2;
+  &--top {
     h1 {
       font-size: 64px;
     }
     p {
       font-size: 40px;
+    }
+  }
+  &--page {
+    padding: 32px;
+    border-bottom: 2px solid #000;
+    font-size: 40px;
+  }
+}
+
+.p-practice {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  &__body {
+    flex: 1;
+    background-color: $color-violet;
+  }
+  &__container {
+    width: 80%;
+    min-width: 768px;
+    margin: 0 auto;
+    padding: 80px 0;
+  }
+}
+
+.m-practiceList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  cursor: pointer;
+  &__item {
+    border: 1px solid #000;
+    padding: 16px;
+    background-color: #fff;
+  }
+  &__image {
+    border: 1px solid #000;
+  }
+  &__category {
+    margin-top: 16px;
+    font-size: 12px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      li {
+        padding: 4px 8px;
+        background: $color-green;
+        border: 1px solid #000;
+      }
+    }
+  }
+  &__title {
+    margin-top: 8px;
+    text-align: center;
+  }
+  &__name {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &__url {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+}
+
+.m-backButton {
+  border-top: 2px solid #000;
+  cursor: pointer;
+  p {
+    display: inline-block;
+    border-right: 2px solid #000;
+    padding: 16px 24px;
+    background-color: $color-green;
+  }
+}
+
+.m-practiceDetail {
+  background-color: #fff;
+  border: 2px solid #000;
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    padding: 32px;
+    border-bottom: 2px solid #000;
+  }
+  &__category {
+    padding: 16px;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    border-bottom: 2px solid #000;
+    justify-content: center;
+    li {
+      padding: 4px 8px;
+      background: $color-green;
+      border: 1px solid #000;
+    }
+  }
+  &__image {
+    border-bottom: 2px solid #000;
+  }
+  &__urls {
+    dl {
+      display: flex;
+      dt,
+      dd {
+        padding: 16px;
+      }
+      dt {
+        border-right: 2px solid #000;
+        width: 200px;
+      }
+      dd {
+        text-decoration: underline;
+      }
+    }
+    dl ~ dl {
+      border-top: 2px solid #000;
     }
   }
 }
