@@ -1,0 +1,44 @@
+$color-green: #79f2a4;
+$color-violet: #9f79f2;
+
+.l-container {
+  min-height: 100vh;
+  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-header {
+  font-family: "Avenir";
+  font-weight: 700;
+  background-color: $color-green;
+  ul {
+    display: flex;
+    border-bottom: 2px solid #000;
+    justify-content: flex-end;
+    li {
+      padding: 16px;
+      border-left: 2px solid #000;
+    }
+  }
+}
+
+.p-top {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__title {
+    text-align: center;
+    font-family: "Avenir";
+    font-weight: 900;
+    // text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+    // color: #9F79F2;
+    h1 {
+      font-size: 64px;
+    }
+    p {
+      font-size: 40px;
+    }
+  }
+}
