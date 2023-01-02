@@ -1,5 +1,5 @@
 import React from "react";
-import { IItem } from "../pages/practice";
+import { IItem } from "../types/Item";
 
 interface Props {
   data: IItem;
@@ -7,17 +7,17 @@ interface Props {
 
 const Detail: React.FC<Props> = ({ data }) => {
   return (
-    <div className="m-practiceDetail">
-      <h2 className="m-practiceDetail__title">{data.name}</h2>
-      <ul className="m-practiceDetail__category">
+    <div className="l-galleryDetail">
+      <h2 className="l-galleryDetail__title">{data.name}</h2>
+      <ul className="l-galleryDetail__category">
         {data.category.map((ctg, idx) => {
           return <li key={`ctg_${idx}`}>{ctg}</li>;
         })}
       </ul>
-      <div className="m-practiceDetail__image">
+      <div className="l-galleryDetail__image">
         <img src={data.thumbnail} alt={data.name} />
       </div>
-      <div className="m-practiceDetail__urls">
+      <div className="l-galleryDetail__urls">
         <dl>
           <dt>ポートフォリオURL</dt>
           <dd>{data.portforioUrl}</dd>
@@ -29,7 +29,7 @@ const Detail: React.FC<Props> = ({ data }) => {
           </dl>
         )}
       </div>
-      {data.text && <p className="m-practiceDetail__text">{data.text}</p>}
+      {data.text && <p className="l-galleryDetail__text">{data.text}</p>}
     </div>
   );
 };

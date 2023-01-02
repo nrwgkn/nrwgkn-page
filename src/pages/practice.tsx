@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import { AppLayout } from "../components/layout";
 import { List } from "../components/list";
 import { Detail } from "../components/detail";
+import { IItem } from "../types/Item";
 
 const practiceData = [
   {
@@ -63,15 +63,6 @@ const practiceData = [
   },
 ];
 
-export interface IItem {
-  name: string;
-  portforioUrl: string;
-  category: string[];
-  url?: string;
-  thumbnail: string;
-  text?: string;
-}
-
 const Practice = () => {
   const [showData, setShowData] = useState<IItem | null>(null);
 
@@ -85,12 +76,12 @@ const Practice = () => {
 
   return (
     <AppLayout>
-      <div className="p-practice">
-        <div className="p-practice__title m-title m-title--page">
+      <div className="p-practice l-gallery">
+        <div className="l-gallery__title m-title">
           <h1>PRACTICE</h1>
         </div>
-        <div className="p-practice__body">
-          <div className="p-practice__container">
+        <div className="l-gallery__body">
+          <div className="l-gallery__container">
             {showData ? (
               <Detail data={showData} />
             ) : (

@@ -1,5 +1,9 @@
 $color-green: #79f2a4;
 $color-violet: #9f79f2;
+$color-pink: #f272ae;
+$color-blue: #8fafed;
+$color-black: #000;
+$color-white: #fff;
 
 html,
 body,
@@ -18,58 +22,32 @@ img {
 .l-container {
   // min-height: 100vh;
   min-height: 100%;
-  border: 2px solid #000;
+  border: 2px solid $color-black;
   display: flex;
   flex-direction: column;
 }
 
-.m-header {
-  // font-family: "Avenir";
-  font-weight: 700;
-  background-color: $color-green;
-  ul {
-    display: flex;
-    border-bottom: 2px solid #000;
-    justify-content: flex-end;
-    li {
-      padding: 16px;
-      border-left: 2px solid #000;
-    }
-  }
-}
-
-.p-top {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.m-title {
-  text-align: center;
-  // font-family: "Avenir";
-  font-weight: 900;
-  // text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
-  // color: #9F79F2;
-  &--top {
-    h1 {
-      font-size: 64px;
-    }
-    p {
-      font-size: 40px;
-    }
-  }
-  &--page {
-    padding: 32px;
-    border-bottom: 2px solid #000;
-    font-size: 40px;
-  }
-}
-
-.p-practice {
+.l-gallery {
   display: flex;
   flex-direction: column;
   flex: 1;
+  &__title {
+    padding: 32px;
+    border-bottom: 2px solid $color-black;
+    font-size: 40px;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 16px;
+      position: absolute;
+      bottom: 0;
+      border-top: 2px solid $color-black;
+      background-color: $color-pink;
+      left: 0;
+    }
+  }
   &__body {
     flex: 1;
     background-color: $color-violet;
@@ -82,18 +60,18 @@ img {
   }
 }
 
-.m-practiceList {
+.l-galleryList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
   cursor: pointer;
   &__item {
-    border: 1px solid #000;
+    border: 1px solid $color-black;
     padding: 16px;
-    background-color: #fff;
+    background-color: $color-white;
   }
   &__image {
-    border: 1px solid #000;
+    border: 1px solid $color-black;
   }
   &__category {
     margin-top: 16px;
@@ -105,7 +83,7 @@ img {
       li {
         padding: 4px 8px;
         background: $color-green;
-        border: 1px solid #000;
+        border: 1px solid $color-black;
       }
     }
   }
@@ -123,43 +101,33 @@ img {
   }
 }
 
-.m-backButton {
-  border-top: 2px solid #000;
-  cursor: pointer;
-  p {
-    display: inline-block;
-    border-right: 2px solid #000;
-    padding: 16px 24px;
-    background-color: $color-green;
-  }
-}
-
-.m-practiceDetail {
-  background-color: #fff;
-  border: 2px solid #000;
+.l-galleryDetail {
+  background-color: $color-white;
+  border: 2px solid $color-black;
   &__title {
     font-size: 24px;
     font-weight: 700;
     text-align: center;
     padding: 32px;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid $color-black;
   }
   &__category {
-    padding: 16px;
-    font-size: 12px;
+    font-size: 14px;
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid $color-black;
     justify-content: center;
     li {
-      padding: 4px 8px;
-      background: $color-green;
-      border: 1px solid #000;
+      padding: 8px;
+      background-color: $color-green;
+      border-left: 2px solid $color-black;
+      &:last-of-type {
+        border-right: 2px solid $color-black;
+      }
     }
   }
   &__image {
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid $color-black;
   }
   &__urls {
     dl {
@@ -169,7 +137,7 @@ img {
         padding: 16px;
       }
       dt {
-        border-right: 2px solid #000;
+        border-right: 2px solid $color-black;
         width: 200px;
       }
       dd {
@@ -177,7 +145,66 @@ img {
       }
     }
     dl ~ dl {
-      border-top: 2px solid #000;
+      border-top: 2px solid $color-black;
     }
+  }
+}
+
+.p-top {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .m-title {
+    h1 {
+      font-size: 64px;
+    }
+    p {
+      font-size: 40px;
+    }
+  }
+}
+
+.p-practice {
+  .l-gallery {
+    &__title::after {
+      background-color: $color-blue;
+    }
+    &__body {
+      background-color: $color-pink;
+    }
+  }
+}
+
+.m-header {
+  // font-family: "Avenir";
+  font-weight: 700;
+  background-color: $color-green;
+  ul {
+    display: flex;
+    border-bottom: 2px solid $color-black;
+    justify-content: flex-end;
+    li {
+      padding: 16px;
+      border-left: 2px solid $color-black;
+    }
+  }
+}
+
+.m-title {
+  text-align: center;
+  font-weight: 900;
+  // text-shadow: 1px 1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, -1px -1px 0 $color-black;
+  // color: #9F79F2;
+}
+
+.m-backButton {
+  border-top: 2px solid $color-black;
+  cursor: pointer;
+  p {
+    display: inline-block;
+    border-right: 2px solid $color-black;
+    padding: 16px 24px;
+    background-color: $color-green;
   }
 }

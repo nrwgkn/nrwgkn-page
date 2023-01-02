@@ -1,5 +1,5 @@
 import React from "react";
-import { IItem } from "../pages/practice";
+import { IItem } from "../types/Item";
 
 interface Props {
   itemList: IItem[];
@@ -8,26 +8,26 @@ interface Props {
 
 const List: React.FC<Props> = ({ itemList, onClick }) => {
   return (
-    <ul className="m-practiceList">
+    <ul className="l-galleryList">
       {itemList.map((item, index) => {
         return (
           <li
-            className="m-practiceList__item"
+            className="l-galleryList__item"
             key={`practice_${index}`}
             onClick={() => onClick(index)}
           >
-            <div className="m-practiceList__image">
+            <div className="l-galleryList__image">
               <img src={item.thumbnail} alt={item.name} />
             </div>
-            <div className="m-practiceList__category">
+            <div className="l-galleryList__category">
               <ul>
                 {item.category.map((ctg, idx) => (
                   <li key={`ctg_${idx}`}>{ctg}</li>
                 ))}
               </ul>
             </div>
-            <div className="m-practiceList__title">
-              <p className="m-practiceList__name">{item.name}</p>
+            <div className="l-galleryList__title">
+              <p className="l-galleryList__name">{item.name}</p>
             </div>
           </li>
         );
