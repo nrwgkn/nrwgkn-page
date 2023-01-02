@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-const Header = () => {
+const AppHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -28,4 +28,4 @@ const Header = () => {
   );
 };
 
-export { Header };
+export { AppHeader };

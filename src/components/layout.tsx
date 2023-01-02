@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { Header } from "../components/Header";
+import { AppHeader } from "../components/Header";
 
 interface Props {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ const AppLayout: React.FC<Props> = ({ children }) => {
         />
       </Head>
       <main className="l-container">
-        <Header />
+        <AppHeader />
         {children}
       </main>
     </>
