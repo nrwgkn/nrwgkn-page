@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { AppLayout } from "@/components/layout";
-import { List } from "@/components/list";
-import { Detail } from "@/components/detail";
+import { AppLayout } from "@/components/Layout";
+import { List } from "@/components/List";
+import { Detail } from "@/components/Detail";
 import { IItem } from "@/types/Item";
 
 const practiceData = [
@@ -83,7 +83,7 @@ const Practice = () => {
         <div className="l-gallery__body">
           <div className="l-gallery__container">
             {showData ? (
-              <Detail data={showData} />
+              <Detail data={showData} onClick={resetView} />
             ) : (
               <>
                 {practiceData.length > 0 && (
@@ -93,11 +93,6 @@ const Practice = () => {
             )}
           </div>
         </div>
-        {showData && (
-          <div className="m-backButton" onClick={resetView}>
-            <p>BACK</p>
-          </div>
-        )}
       </div>
     </AppLayout>
   );

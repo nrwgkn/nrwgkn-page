@@ -1,14 +1,22 @@
 import React from "react";
 import { IItem } from "@/types/Item";
+import { Link } from "@/components/Link";
 
 interface Props {
   data: IItem;
+  onClick: () => void;
 }
 
-const Detail: React.FC<Props> = ({ data }) => {
+const Detail: React.FC<Props> = ({ data, onClick }) => {
   return (
     <div className="m-galleryDetail">
-      <h2 className="m-galleryDetail__title">{data.name}</h2>
+      <div className="m-galleryDetail__close" onClick={onClick}>
+        <p>CLOSE</p>
+      </div>
+      <div className="m-galleryDetail__title">
+        <h2>{data.name}</h2>
+        {data.url && <Link url={data.url} label={data.url} />}
+      </div>
       <ul className="m-galleryDetail__category">
         {data.category.map((ctg, idx) => {
           return <li key={`ctg_${idx}`}>{ctg}</li>;
@@ -17,38 +25,24 @@ const Detail: React.FC<Props> = ({ data }) => {
       <div className="m-galleryDetail__image">
         <img src={data.thumbnail} alt={data.name} />
       </div>
-      <div className="m-galleryDetail__comment">
-        {data.portforioUrl && (
-          <dl>
-            <dt>ポートフォリオURL</dt>
-            <dd>
-              <a
-                href={data.portforioUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {data.portforioUrl}
-              </a>
-            </dd>
-          </dl>
-        )}
-        {data.url && (
-          <dl>
-            <dt>参照元URL</dt>
-            <dd>
-              <a href={data.url} target="_blank" rel="noopener noreferrer">
-                {data.url}
-              </a>
-            </dd>
-          </dl>
-        )}
-        {data.text && (
-          <dl>
-            <dt>説明</dt>
-            <dd>{data.text}</dd>
-          </dl>
-        )}
-      </div>
+      {(data.portforioUrl || data.text) && (
+        <div className="m-galleryDetail__description">
+          {data.portforioUrl && (
+            <dl>
+              <dt>ポートフォリオURL</dt>
+              <dd>
+                <Link url={data.portforioUrl} label={data.portforioUrl} />
+              </dd>
+            </dl>
+          )}
+          {data.text && (
+            <dl>
+              <dt>説明</dt>
+              <dd>{data.text}</dd>
+            </dl>
+          )}
+        </div>
+      )}
     </div>
   );
 };

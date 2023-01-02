@@ -14,14 +14,22 @@ body,
 
 body {
   font-family: "Avenir", "Noto Sans JP", sans-serif;
+  &.is-MenuOpen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
 }
 
 img {
   width: 100%;
 }
 
+/********
+* Layout
+********/
+
 .l-container {
-  // min-height: 100vh;
   min-height: 100%;
   border: 2px solid $color-black;
   display: flex;
@@ -53,17 +61,38 @@ img {
   }
   &__container {
     width: 80%;
-    min-width: 768px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 80px 0;
   }
 }
 
+/********
+* Atoms
+********/
+
+.a-link {
+  text-decoration: underline;
+  word-break: break-all;
+  font-weight: 400;
+  display: block;
+}
+
+/********
+* Molecules
+********/
+
 .m-galleryList {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 24px;
   cursor: pointer;
+  @media screen and (min-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
   &__item {
     border: 1px solid $color-black;
     padding: 16px;
@@ -103,46 +132,80 @@ img {
 .m-galleryDetail {
   background-color: $color-white;
   border: 2px solid $color-black;
+  &__close {
+    border-bottom: 2px solid $color-black;
+    text-align: right;
+    cursor: pointer;
+    font-weight: 700;
+    p {
+      display: inline-block;
+      border-left: 2px solid $color-black;
+      padding: 16px 24px;
+      background-color: $color-green;
+    }
+  }
   &__title {
-    font-size: 24px;
     font-weight: 700;
     text-align: center;
     padding: 32px;
     border-bottom: 2px solid $color-black;
+    h2 {
+      font-size: 24px;
+    }
+    a {
+      margin-top: 4px;
+    }
   }
   &__category {
     font-size: 14px;
     display: flex;
     flex-wrap: wrap;
     border-bottom: 2px solid $color-black;
-    justify-content: center;
+    text-align: center;
+    @media screen and (min-width: 480px) {
+      justify-content: center;
+    }
     li {
       padding: 8px;
-      background-color: $color-green;
-      border-left: 2px solid $color-black;
-      &:last-of-type {
-        border-right: 2px solid $color-black;
+      background-color: $color-yellow;
+      width: 100%;
+      @media screen and (min-width: 480px) {
+        width: auto;
+        border-left: 2px solid $color-black;
+      }
+      &:last-child {
+        @media screen and (min-width: 480px) {
+          border-right: 2px solid $color-black;
+        }
+      }
+    }
+    li ~ li {
+      border-top: 2px solid $color-black;
+      @media screen and (min-width: 480px) {
+        border-top: none;
       }
     }
   }
-  &__image {
-    border-bottom: 2px solid $color-black;
-  }
-  &__comment {
+  &__description {
+    border-top: 2px solid $color-black;
     dl {
       display: flex;
+      flex-direction: column;
+      @media screen and (min-width: 480px) {
+        flex-direction: row;
+      }
       dt,
       dd {
         padding: 16px;
       }
       dt {
-        border-right: 2px solid $color-black;
-        width: 200px;
+        border-bottom: 2px solid $color-black;
+        width: 100%;
         flex-shrink: 0;
-      }
-      dd {
-        a {
-          text-decoration: underline;
+        @media screen and (min-width: 480px) {
+          border-bottom: none;
+          border-right: 2px solid $color-black;
+          width: 200px;
         }
       }
     }
@@ -152,6 +215,165 @@ img {
   }
 }
 
+.m-header {
+  font-weight: 700;
+  background-color: $color-green;
+  position: relative;
+  border-bottom: 2px solid #000;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  @media screen and (min-width: 480px) {
+    height: auto;
+  }
+  &::before {
+    content: "";
+    display: block;
+    z-index: 5;
+    right: 0;
+    top: 0;
+  }
+
+  ul {
+    display: none;
+    position: absolute;
+    z-index: 6;
+    flex-direction: column;
+    width: 100%;
+    right: 0;
+    top: 56px;
+    height: 100vh;
+    background-color: $color-white;
+    @media screen and (min-width: 480px) {
+      position: static;
+      display: flex;
+      background-color: transparent;
+      justify-content: flex-end;
+      border-left: none;
+      flex-direction: row;
+      width: 100%;
+      position: static;
+      height: auto;
+    }
+    li {
+      border-bottom: 2px solid $color-black;
+      display: flex;
+      @media screen and (min-width: 480px) {
+        border-left: 2px solid $color-black;
+        border-bottom: none;
+      }
+      &::before {
+        content: "";
+        display: block;
+        width: 20%;
+        flex-shrink: 0;
+        border-right: 2px solid $color-black;
+        @media screen and (min-width: 480px) {
+          display: none;
+        }
+      }
+      a {
+        padding: 16px;
+        display: block;
+        width: 100%;
+      }
+      &:first-child {
+        &::before {
+          background-color: $color-violet;
+        }
+      }
+      &:nth-child(2) {
+        &::before {
+          background-color: $color-yellow;
+        }
+      }
+      &:nth-child(3) {
+        &::before {
+          background-color: $color-pink;
+        }
+      }
+      &:last-child {
+        &::before {
+          background-color: $color-blue;
+        }
+      }
+    }
+    &.isMenuOpen {
+      display: flex;
+    }
+  }
+  &__toggle {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    z-index: 6;
+    @media screen and (min-width: 480px) {
+      display: none;
+    }
+    &,
+    &::before,
+    &::after {
+      width: 32px;
+      height: 2px;
+      background-color: $color-black;
+    }
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 8px;
+      right: 0px;
+    }
+    &::before {
+      top: 8px;
+    }
+    &::after {
+      top: 16px;
+    }
+    &.isMenuOpen {
+      @media screen and (min-width: 480px) {
+        display: none;
+      }
+      transform: rotate(45deg);
+      top: 28px;
+      &::before {
+        display: none;
+      }
+      &::after {
+        transform: rotate(90deg);
+        top: 0;
+      }
+    }
+  }
+}
+
+.m-title {
+  text-align: center;
+  font-weight: 900;
+  text-shadow: 2px 2px 0 $color-black, 1px -1px 0 $color-black,
+    -1px 1px 0 $color-black, -1px -1px 0 $color-black;
+  color: $color-violet;
+}
+
+.m-backButton {
+  border-top: 2px solid $color-black;
+  cursor: pointer;
+  p {
+    display: inline-block;
+    border-right: 2px solid $color-black;
+    padding: 16px 24px;
+    background-color: $color-green;
+  }
+}
+
+/********
+* Page
+********/
+
+// TOP
 .p-top {
   flex-grow: 1;
   display: flex;
@@ -167,6 +389,7 @@ img {
   }
 }
 
+// PRACTICE
 .p-practice {
   .l-gallery {
     &__title::after {
@@ -178,17 +401,19 @@ img {
   }
 }
 
+// WORKS
 .p-works {
   .l-gallery {
     &__title::after {
       background-color: $color-pink;
     }
     &__body {
-      background-color: $color-violet;
+      background-color: $color-yellow;
     }
   }
 }
 
+// FEATURE
 .p-feature {
   .l-gallery {
     &__title::after {
@@ -198,28 +423,50 @@ img {
       background-color: $color-blue;
     }
   }
-}
 
-.p-feature {
   &Card {
     background-color: $color-white;
     border: 2px solid $color-black;
-    display: flex;
-    flex-wrap: wrap;
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      width: 100%;
+      border-bottom: 2px solid $color-black;
+      span {
+        padding: 32px;
+        display: inline-block;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        background-color: $color-green;
+      }
+    }
     &__image,
     &__data {
       flex-basis: 50%;
     }
     &__image {
       padding: 16px;
+      border-bottom: 2px solid #000;
+      @media screen and (min-width: 1024px) {
+        display: flex;
+        flex-wrap: wrap;
+      }
       img {
         border: 2px solid $color-black;
+        height: min-content;
       }
     }
     &__data {
-      border-left: 2px solid $color-black;
+      @media screen and (min-width: 1024px) {
+        border-left: 2px solid $color-black;
+      }
       p {
-        padding: 8px;
+        padding: 16px;
         text-align: center;
         font-weight: 700;
         background-color: $color-pink;
@@ -234,8 +481,10 @@ img {
         }
         dt {
           width: 20%;
-          min-width: 180px;
           flex-shrink: 0;
+          @media screen and (min-width: 480px) {
+            min-width: 180px;
+          }
         }
         dd {
           border-left: 2px solid $color-black;
@@ -245,51 +494,23 @@ img {
     }
     &__comment {
       flex-basis: 100%;
-      border-top: 2px solid $color-black;
       span {
-        padding: 16px;
-        display: inline-block;
         background-color: $color-yellow;
-        border-right: 2px solid $color-black;
+        text-align: center;
+        font-weight: bold;
+        width: 100%;
         border-bottom: 2px solid $color-black;
+        display: inline-block;
+        padding: 16px;
+        @media screen and (min-width: 480px) {
+          border-right: 2px solid $color-black;
+          width: auto;
+        }
       }
       p {
         padding: 16px;
         line-height: 1.4;
       }
     }
-  }
-}
-
-.m-header {
-  // font-family: "Avenir";
-  font-weight: 700;
-  background-color: $color-green;
-  ul {
-    display: flex;
-    border-bottom: 2px solid $color-black;
-    justify-content: flex-end;
-    li {
-      padding: 16px;
-      border-left: 2px solid $color-black;
-    }
-  }
-}
-
-.m-title {
-  text-align: center;
-  font-weight: 900;
-  // text-shadow: 1px 1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, -1px -1px 0 $color-black;
-  // color: #9F79F2;
-}
-
-.m-backButton {
-  border-top: 2px solid $color-black;
-  cursor: pointer;
-  p {
-    display: inline-block;
-    border-right: 2px solid $color-black;
-    padding: 16px 24px;
-    background-color: $color-green;
   }
 }

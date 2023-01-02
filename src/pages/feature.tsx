@@ -1,5 +1,6 @@
 import React from "react";
-import { AppLayout } from "@/components/layout";
+import { AppLayout } from "@/components/Layout";
+import { Link } from "@/components/Link";
 
 const Feature = () => {
   return (
@@ -11,6 +12,9 @@ const Feature = () => {
         <div className="l-gallery__body">
           <div className="l-gallery__container">
             <div className="p-featureCard">
+              <h2 className="p-featureCard__title">
+                <span>Trending Posts</span>
+              </h2>
               <div className="p-featureCard__image">
                 <img
                   src="../img/feature/mov_react_twitterApi.gif"
@@ -20,8 +24,13 @@ const Feature = () => {
               <div className="p-featureCard__data">
                 <p>概要</p>
                 <dl>
-                  <dt>タイトル</dt>
-                  <dd>Trending Posts</dd>
+                  <dt>URL</dt>
+                  <dd>
+                    <Link
+                      url="https://trending-posts.netlify.app/"
+                      label="https://trending-posts.netlify.app/"
+                    />
+                  </dd>
                 </dl>
                 <dl>
                   <dt>使用技術</dt>
@@ -35,7 +44,7 @@ const Feature = () => {
                   <dd>
                     検索キーワードに対して一定数以上いいねが付いたツイートを検索できるアプリケーション
                     <br />
-                    指定するいいね数はデフォルトで1000だが変更が可能
+                    指定するいいね数は変更が可能（デフォルトは1000）
                   </dd>
                 </dl>
                 <dl>

@@ -1,10 +1,16 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="m-header">
-      <ul>
+      <div
+        className={`m-header__toggle${isOpen ? " isMenuOpen" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      />
+      <ul className={`${isOpen ? "isMenuOpen" : ""}`}>
         <li>
           <Link href="/">HOME</Link>
         </li>
