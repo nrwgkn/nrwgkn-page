@@ -18,10 +18,10 @@ const AppHeader = () => {
           <Link href="/feature">FEATURE</Link>
         </li>
         <li>
-          <Link href="/works">WORKS</Link>
+          <Link href="/practice">PRACTICE</Link>
         </li>
         <li>
-          <Link href="/practice">PRACTICE</Link>
+          <Link href="/works">WORKS</Link>
         </li>
       </ul>
     </header>
