@@ -1,0 +1,12 @@
+@use "/src/styles/settings/variables" as v;
+
+.m-backButton {
+  border-top: 2px solid v.$color-black;
+  cursor: pointer;
+  p {
+    display: inline-block;
+    border-right: 2px solid v.$color-black;
+    padding: 16px 24px;
+    background-color: v.$color-green;
+  }
+}

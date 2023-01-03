@@ -1,0 +1,9 @@
+@use "/src/styles/settings/variables" as v;
+
+.m-title {
+  text-align: center;
+  font-weight: 900;
+  text-shadow: 2px 2px 0 v.$color-black, 1px -1px 0 v.$color-black,
+    -1px 1px 0 v.$color-black, -1px -1px 0 v.$color-black;
+  color: v.$color-violet;
+}

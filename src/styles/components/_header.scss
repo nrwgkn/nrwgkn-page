@@ -1,0 +1,160 @@
+@use "/src/styles/settings/variables" as v;
+
+.m-header {
+  font-weight: 700;
+  background-color: v.$color-green;
+  position: relative;
+  border-bottom: 2px solid v.$color-black;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  @media screen and (min-width: 480px) {
+    height: auto;
+  }
+  &::before {
+    content: "";
+    display: block;
+    z-index: 5;
+    right: 0;
+    top: 0;
+  }
+
+  ul {
+    display: none;
+    position: absolute;
+    z-index: 6;
+    flex-direction: column;
+    width: 100%;
+    right: 0;
+    top: 56px;
+    height: 100vh;
+    background-color: v.$color-white;
+    @media screen and (min-width: 480px) {
+      position: static;
+      display: flex;
+      background-color: transparent;
+      justify-content: flex-end;
+      border-left: none;
+      flex-direction: row;
+      width: 100%;
+      position: static;
+      height: auto;
+    }
+    li {
+      border-bottom: 2px solid v.$color-black;
+      display: flex;
+      @media screen and (min-width: 480px) {
+        border-left: 2px solid v.$color-black;
+        border-bottom: none;
+      }
+      &::before {
+        content: "";
+        display: block;
+        width: 20%;
+        flex-shrink: 0;
+        border-right: 2px solid v.$color-black;
+        @media screen and (min-width: 480px) {
+          display: none;
+        }
+      }
+      a {
+        padding: 16px;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        &::after {
+          background: v.$color-black;
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          width: 100%;
+          height: 100%;
+          transform: scale(0, 1);
+          transform-origin: left top;
+          transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+          z-index: -1;
+        }
+        &:hover {
+          @media screen and (min-width: 480px) {
+            color: v.$color-white;
+            &::after {
+              transform: scale(1, 1);
+            }
+          }
+        }
+      }
+      &:first-child {
+        &::before {
+          background-color: v.$color-violet;
+        }
+      }
+      &:nth-child(2) {
+        &::before {
+          background-color: v.$color-yellow;
+        }
+      }
+      &:nth-child(3) {
+        &::before {
+          background-color: v.$color-pink;
+        }
+      }
+      &:last-child {
+        &::before {
+          background-color: v.$color-blue;
+        }
+      }
+    }
+  }
+  &__toggle {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    z-index: 6;
+    @media screen and (min-width: 480px) {
+      display: none;
+    }
+    &,
+    &::before,
+    &::after {
+      width: 32px;
+      height: 2px;
+      background-color: v.$color-black;
+    }
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 8px;
+      right: 0px;
+    }
+    &::before {
+      top: 8px;
+    }
+    &::after {
+      top: 16px;
+    }
+    &.isMenuOpen {
+      @media screen and (min-width: 480px) {
+        display: none;
+      }
+      transform: rotate(45deg);
+      top: 28px;
+      &::before {
+        display: none;
+      }
+      &::after {
+        transform: rotate(90deg);
+        top: 0;
+      }
+      + ul {
+        display: flex;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use "/src/styles/settings/variables" as v;
+
+.p-works {
+  .l-gallery {
+    &__title::after {
+      background-color: v.$color-pink;
+    }
+    &__body {
+      background-color: v.$color-yellow;
+    }
+  }
+}

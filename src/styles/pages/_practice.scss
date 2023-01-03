@@ -1,0 +1,12 @@
+@use "/src/styles/settings/variables" as v;
+
+.p-practice {
+  .l-gallery {
+    &__title::after {
+      background-color: v.$color-blue;
+    }
+    &__body {
+      background-color: v.$color-pink;
+    }
+  }
+}

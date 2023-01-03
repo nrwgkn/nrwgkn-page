@@ -10,7 +10,7 @@ const AppHeader = () => {
         className={`m-header__toggle${isOpen ? " isMenuOpen" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
       />
-      <ul className={`${isOpen ? "isMenuOpen" : ""}`}>
+      <ul>
         <li>
           <Link href="/">HOME</Link>
         </li>

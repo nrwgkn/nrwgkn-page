@@ -1,0 +1,135 @@
+@use "/src/styles/settings/variables" as v;
+
+.m-galleryList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  cursor: pointer;
+  @media screen and (min-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  &__item {
+    border: 1px solid v.$color-black;
+    padding: 16px;
+    background-color: v.$color-white;
+  }
+  &__image {
+    border: 1px solid v.$color-black;
+  }
+  &__category {
+    margin-top: 16px;
+    font-size: 12px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      li {
+        padding: 4px 8px;
+        background: v.$color-green;
+        border: 1px solid v.$color-black;
+      }
+    }
+  }
+  &__title {
+    margin-top: 8px;
+    text-align: center;
+  }
+  &__name {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &__url {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+}
+
+.m-galleryDetail {
+  background-color: v.$color-white;
+  border: 2px solid v.$color-black;
+  &__close {
+    border-bottom: 2px solid v.$color-black;
+    text-align: right;
+    cursor: pointer;
+    font-weight: 700;
+    p {
+      display: inline-block;
+      border-left: 2px solid v.$color-black;
+      padding: 16px 24px;
+      background-color: v.$color-green;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    text-align: center;
+    padding: 32px;
+    border-bottom: 2px solid v.$color-black;
+    h2 {
+      font-size: 24px;
+    }
+    a {
+      margin-top: 4px;
+    }
+  }
+  &__category {
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid v.$color-black;
+    text-align: center;
+    @media screen and (min-width: 480px) {
+      justify-content: center;
+    }
+    li {
+      padding: 8px;
+      background-color: v.$color-yellow;
+      width: 100%;
+      @media screen and (min-width: 480px) {
+        width: auto;
+        border-left: 2px solid v.$color-black;
+      }
+      &:last-child {
+        @media screen and (min-width: 480px) {
+          border-right: 2px solid v.$color-black;
+        }
+      }
+    }
+    li ~ li {
+      border-top: 2px solid v.$color-black;
+      @media screen and (min-width: 480px) {
+        border-top: none;
+      }
+    }
+  }
+  &__description {
+    border-top: 2px solid v.$color-black;
+    dl {
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: 480px) {
+        flex-direction: row;
+      }
+      dt,
+      dd {
+        padding: 16px;
+      }
+      dt {
+        border-bottom: 2px solid v.$color-black;
+        width: 100%;
+        flex-shrink: 0;
+        @media screen and (min-width: 480px) {
+          border-bottom: none;
+          border-right: 2px solid v.$color-black;
+          width: 200px;
+        }
+      }
+    }
+    dl ~ dl {
+      border-top: 2px solid v.$color-black;
+    }
+  }
+}
