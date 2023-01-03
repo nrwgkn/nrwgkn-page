@@ -1,5 +1,6 @@
 import React from "react";
-import { IItem } from "../types/Item";
+import Image from "next/image";
+import { IItem } from "@/types/Item";
 
 interface Props {
   itemList: IItem[];
@@ -17,7 +18,12 @@ const List: React.FC<Props> = ({ itemList, onClick }) => {
             onClick={() => onClick(index)}
           >
             <div className="c-galleryList__image">
-              <img src={item.thumbnail} alt={item.name} />
+              <Image
+                src={item.thumbnail}
+                alt={item.name}
+                width={800}
+                height={600}
+              />
             </div>
             <div className="c-galleryList__category">
               <ul>

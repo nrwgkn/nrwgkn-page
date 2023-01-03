@@ -1,6 +1,7 @@
 import React from "react";
-import { IItem } from "../types/Item";
-import { Link } from "../components/Link";
+import Image from "next/image";
+import { IItem } from "@/types/Item";
+import { Link } from "@/components/Link";
 
 interface Props {
   data: IItem;
@@ -23,7 +24,7 @@ const Detail: React.FC<Props> = ({ data, onClick }) => {
         })}
       </ul>
       <div className="c-galleryDetail__image">
-        <img src={data.thumbnail} alt={data.name} />
+        <Image src={data.thumbnail} alt={data.name} width={800} height={600} />
       </div>
       {(data.portforioUrl || data.text) && (
         <div className="c-galleryDetail__description">

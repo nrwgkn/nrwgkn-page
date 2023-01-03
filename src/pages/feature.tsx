@@ -1,6 +1,7 @@
 import React from "react";
-import { AppLayout } from "../components/Layout";
-import { Link } from "../components/Link";
+import Image from "next/image";
+import { AppLayout } from "@/components/Layout";
+import { Link } from "@/components/Link";
 
 const Feature = () => {
   return (
@@ -16,9 +17,11 @@ const Feature = () => {
                 <span>Trending Posts</span>
               </h2>
               <div className="p-featureCard__image">
-                <img
-                  src="../img/feature/mov_react_twitterApi.gif"
+                <Image
+                  src="/img/feature/mov_react_twitterApi.gif"
                   alt="trending posts"
+                  width={720}
+                  height={480}
                 />
               </div>
               <div className="p-featureCard__data">

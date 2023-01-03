@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { AppLayout } from "../components/Layout";
-import { List } from "../components/List";
-import { Detail } from "../components/Detail";
-import { IItem } from "../types/Item";
-import { worksData } from "../data";
+import { AppLayout } from "@/components/Layout";
+import { List } from "@/components/List";
+import { Detail } from "@/components/Detail";
+import { IItem } from "@/types/Item";
+import { worksData } from "@/data";
 
 const Works = () => {
   const [showData, setShowData] = useState<IItem | null>(null);
