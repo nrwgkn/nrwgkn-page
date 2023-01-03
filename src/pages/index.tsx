@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <AppLayout>
         <div className="p-top">
-          <div className="m-title">
+          <div className="c-title">
             <h1>RINO NISHIMURA</h1>
             <p>PORTFORIO</p>
           </div>

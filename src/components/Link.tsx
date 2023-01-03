@@ -7,7 +7,7 @@ interface Props {
 
 const Link: React.FC<Props> = ({ url, label }) => {
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" className="a-link">
+    <a href={url} target="_blank" rel="noopener noreferrer" className="c-link">
       {label}
     </a>
   );

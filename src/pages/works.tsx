@@ -19,7 +19,7 @@ const Works = () => {
   return (
     <AppLayout>
       <div className="p-works l-gallery">
-        <div className="l-gallery__title m-title">
+        <div className="l-gallery__title c-title">
           <h1>WORKS</h1>
         </div>
         <div className="l-gallery__body">

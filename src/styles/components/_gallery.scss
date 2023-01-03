@@ -1,6 +1,6 @@
 @use "/src/styles/settings/variables" as v;
 
-.m-galleryList {
+.c-galleryList {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
@@ -48,7 +48,7 @@
   }
 }
 
-.m-galleryDetail {
+.c-galleryDetail {
   background-color: v.$color-white;
   border: 2px solid v.$color-black;
   &__close {

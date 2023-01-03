@@ -6,7 +6,7 @@ const Feature = () => {
   return (
     <AppLayout>
       <div className="p-feature l-gallery">
-        <div className="l-gallery__title m-title">
+        <div className="l-gallery__title c-title">
           <h1>FEATURE</h1>
         </div>
         <div className="l-gallery__body">

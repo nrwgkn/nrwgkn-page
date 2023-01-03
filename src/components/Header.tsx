@@ -5,9 +5,9 @@ const AppHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="m-header">
+    <header className="c-header">
       <div
-        className={`m-header__toggle${isOpen ? " isMenuOpen" : ""}`}
+        className={`c-header__toggle${isOpen ? " isMenuOpen" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
       />
       <ul>
