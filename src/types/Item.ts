@@ -3,6 +3,6 @@ export interface IItem {
   portforioUrl?: string;
   category: string[];
   url?: string;
-  thumbnail: string;
+  thumbnail?: string;
   text?: string;
 }

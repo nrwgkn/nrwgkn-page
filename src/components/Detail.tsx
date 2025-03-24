@@ -24,7 +24,12 @@ const Detail: React.FC<Props> = ({ data, onClick }) => {
         })}
       </ul>
       <div className="c-galleryDetail__image">
-        <Image src={data.thumbnail} alt={data.name} width={800} height={600} />
+        <Image
+          src={data.thumbnail ?? "/img/img_no_image.png"}
+          alt={data.name}
+          width={800}
+          height={600}
+        />
       </div>
       {(data.portforioUrl || data.text) && (
         <div className="c-galleryDetail__description">

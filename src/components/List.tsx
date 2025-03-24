@@ -19,7 +19,7 @@ const List: React.FC<Props> = ({ itemList, onClick }) => {
           >
             <div className="c-galleryList__image">
               <Image
-                src={item.thumbnail}
+                src={item.thumbnail ?? "/img/img_no_image.png"}
                 alt={item.name}
                 width={800}
                 height={600}
