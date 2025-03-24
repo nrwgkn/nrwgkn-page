@@ -105,6 +105,9 @@
       }
     }
   }
+  &__image {
+    padding: 16px;
+  }
   &__description {
     border-top: 2px solid v.$color-black;
     dl {
@@ -126,6 +129,9 @@
           border-right: 2px solid v.$color-black;
           width: 200px;
         }
+      }
+      dd {
+        line-height: 1.4;
       }
     }
     dl ~ dl {
