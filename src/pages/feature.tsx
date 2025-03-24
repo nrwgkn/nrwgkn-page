@@ -38,7 +38,7 @@ const Feature = () => {
                 <dl>
                   <dt>使用技術</dt>
                   <dd>
-                    Figma, React.js, TypeScript, Sass, Netlify, Twitter API, AWS
+                    Figma, React, TypeScript, Sass, Netlify, Twitter API, AWS
                     Lambda, API Gateway
                   </dd>
                 </dl>

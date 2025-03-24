@@ -36,21 +36,21 @@ export const PRACTICE_DATA: IItem[] = [
   {
     name: "React ストップウォッチ",
     portforioUrl: "https://nrwgkn.github.io/react-stopwatch/",
-    category: ["React.js"],
+    category: ["React"],
     thumbnail: "/img/practice/img_react_stopwatch.png",
     text: "Reactの学習のため作成したストップウォッチのアプリケーションです。",
   },
   {
     name: "React 電卓",
     portforioUrl: "https://nrwgkn.github.io/react-calculator/",
-    category: ["React.js", "Redux"],
+    category: ["React", "Redux"],
     thumbnail: "/img/practice/img_react_calculator.png",
     text: "ReactとReduxの学習のため作成した電卓のアプリケーションです。",
   },
   {
     name: "React メモ",
     portforioUrl: "https://nrwgkn.github.io/react-memo/",
-    category: ["React.js"],
+    category: ["React"],
     thumbnail: "/img/practice/img_react_memo.png",
     text: "Reactの学習のため作成したメモ帳のアプリケーションです。",
   },
@@ -65,7 +65,7 @@ export const PRACTICE_DATA: IItem[] = [
     name: "Trending Posts",
     portforioUrl: "https://trending-posts.netlify.app/",
     category: [
-      "React.js",
+      "React",
       "TypeScript",
       "Sass",
       "Netlify",
@@ -79,7 +79,7 @@ export const PRACTICE_DATA: IItem[] = [
   },
   {
     name: "ポートフォリオサイト",
-    category: ["React.js", "TypeScript", "Next.js", "Sass", "Netlify"],
+    category: ["React", "TypeScript", "Next.js", "Sass", "Netlify"],
     thumbnail: "/img/practice/img_next_portfolio.png",
     text: "このサイトです。HTMLで作成していた自身のポートフォリオサイトをReactを使用して作成し直しました。",
   },
