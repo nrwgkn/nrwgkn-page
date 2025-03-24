@@ -64,7 +64,7 @@
           cursor: pointer;
           text-decoration: underline;
           &:hover {
-            opacity: 0.8;
+            color: v.$color-blue;
           }
         }
       }

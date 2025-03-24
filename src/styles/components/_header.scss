@@ -52,7 +52,7 @@
       &::before {
         content: "";
         display: block;
-        width: 20%;
+        width: 10%;
         flex-shrink: 0;
         border-right: 2px solid v.$color-black;
         @media screen and (min-width: 480px) {
@@ -88,22 +88,22 @@
           }
         }
       }
-      &:first-child {
+      &:nth-child(4n + 1) {
         &::before {
           background-color: v.$color-violet;
         }
       }
-      &:nth-child(2) {
+      &:nth-child(4n + 2) {
         &::before {
           background-color: v.$color-yellow;
         }
       }
-      &:nth-child(3) {
+      &:nth-child(4n + 3) {
         &::before {
           background-color: v.$color-pink;
         }
       }
-      &:last-child {
+      &:nth-child(4n + 4) {
         &::before {
           background-color: v.$color-blue;
         }
