@@ -15,6 +15,9 @@ const AppHeader = () => {
           <Link href="/">HOME</Link>
         </li>
         <li>
+          <Link href="/about">ABOUT</Link>
+        </li>
+        <li>
           <Link href="/feature">FEATURE</Link>
         </li>
         <li>

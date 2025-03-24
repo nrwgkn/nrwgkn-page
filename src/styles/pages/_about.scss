@@ -1,0 +1,76 @@
+@use "/src/styles/settings/variables" as v;
+
+.p-about {
+  .l-gallery {
+    &__title::after {
+      background-color: v.$color-yellow;
+    }
+    &__body {
+      background-color: v.$color-pink;
+    }
+  }
+
+  &Card {
+    background-color: v.$color-white;
+    border: 2px solid v.$color-black;
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      width: 100%;
+      border-bottom: 2px solid v.$color-black;
+      span {
+        padding: 32px;
+        display: inline-block;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        background-color: v.$color-green;
+      }
+    }
+    &__description {
+      padding: 16px;
+      line-height: 1.4;
+    }
+    &__link {
+      flex: 1;
+      dl {
+        display: flex;
+        flex-direction: column;
+        @media screen and (min-width: 480px) {
+          flex-direction: row;
+        }
+      }
+      dl ~ dl {
+        border-top: 2px solid v.$color-black;
+      }
+      dt {
+        flex-basis: 20%;
+        padding: 8px;
+        background-color: v.$color-blue;
+      }
+      dd {
+        flex-basis: 80%;
+        padding: 8px;
+        border-top: 2px solid v.$color-black;
+        @media screen and (min-width: 480px) {
+          border-top: none;
+          border-left: 2px solid v.$color-black;
+        }
+        a {
+          cursor: pointer;
+          text-decoration: underline;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    & + & {
+      border-top: none;
+    }
+  }
+}
