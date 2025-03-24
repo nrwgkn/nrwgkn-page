@@ -1,4 +1,6 @@
-export const worksData = [
+import { IItem } from "@/types/Item";
+
+export const worksData: IItem[] = [
   {
     name: "インターネットカフェのホームページのリニューアル",
     category: ["Responsive", "JavaScript", "Sass"],
@@ -43,7 +45,7 @@ export const worksData = [
   },
 ];
 
-export const practiceData = [
+export const practiceData: IItem[] = [
   {
     name: "株式会社 FiNC Technologies 採用情報ページ",
     portforioUrl: "https://nrwgkn.github.io/reproduction-site-finc_recruit/",
