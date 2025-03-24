@@ -3,13 +3,13 @@ import { AppLayout } from "@/components/Layout";
 import { List } from "@/components/List";
 import { Detail } from "@/components/Detail";
 import { IItem } from "@/types/Item";
-import { worksData } from "@/data";
+import { WORKS_DATA } from "@/data";
 
 const Works = () => {
   const [showData, setShowData] = useState<IItem | null>(null);
 
   const onChangeView = (index: number) => {
-    setShowData(worksData[index]);
+    setShowData(WORKS_DATA[index]);
   };
 
   const resetView = () => {
@@ -28,8 +28,8 @@ const Works = () => {
               <Detail data={showData} onClick={resetView} />
             ) : (
               <>
-                {worksData.length > 0 && (
-                  <List itemList={worksData} onClick={onChangeView} />
+                {WORKS_DATA.length > 0 && (
+                  <List itemList={WORKS_DATA} onClick={onChangeView} />
                 )}
               </>
             )}

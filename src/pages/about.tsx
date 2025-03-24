@@ -1,6 +1,7 @@
 import React from "react";
 import { AppLayout } from "@/components/Layout";
 import { Link } from "@/components/Link";
+import { SITE_URL } from "@/data";
 
 const Feature = () => {
   return (
@@ -31,19 +32,13 @@ const Feature = () => {
                 <dl>
                   <dt>GitHub:</dt>
                   <dd>
-                    <Link
-                      url="https://github.com/nrwgkn"
-                      label="https://github.com/nrwgkn"
-                    />
+                    <Link url={SITE_URL.GITHUB} label={SITE_URL.GITHUB} />
                   </dd>
                 </dl>
                 <dl>
                   <dt>Qiita:</dt>
                   <dd>
-                    <Link
-                      url="https://qiita.com/nrwgkn"
-                      label="https://qiita.com/nrwgkn"
-                    />
+                    <Link url={SITE_URL.QIITA} label={SITE_URL.QIITA} />
                   </dd>
                 </dl>
               </div>

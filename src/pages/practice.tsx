@@ -3,13 +3,13 @@ import { AppLayout } from "@/components/Layout";
 import { List } from "@/components/List";
 import { Detail } from "@/components/Detail";
 import { IItem } from "@/types/Item";
-import { practiceData } from "@/data";
+import { PRACTICE_DATA } from "@/data";
 
 const Practice = () => {
   const [showData, setShowData] = useState<IItem | null>(null);
 
   const onChangeView = (index: number) => {
-    setShowData(practiceData[index]);
+    setShowData(PRACTICE_DATA[index]);
   };
 
   const resetView = () => {
@@ -28,8 +28,8 @@ const Practice = () => {
               <Detail data={showData} onClick={resetView} />
             ) : (
               <>
-                {practiceData.length > 0 && (
-                  <List itemList={practiceData} onClick={onChangeView} />
+                {PRACTICE_DATA.length > 0 && (
+                  <List itemList={PRACTICE_DATA} onClick={onChangeView} />
                 )}
               </>
             )}
