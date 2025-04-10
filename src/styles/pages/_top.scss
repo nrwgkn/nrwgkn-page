@@ -3,6 +3,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(
+      0deg,
+      transparent calc(100% - 1px),
+      #333 calc(100% - 1px)
+    ),
+    linear-gradient(90deg, transparent calc(100% - 1px), #666 calc(100% - 1px));
+  background-size: 40px 40px;
+  background-repeat: repeat;
+  background-position: center center;
   .c-title {
     h1 {
       font-size: 40px;
